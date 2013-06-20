@@ -16,9 +16,6 @@ var cookieParams = function() {
 };
 
 exports.trackPageview = function(req) {
-  // don't track requests from the ui or the favicon.ico urls from express
-  if (req.headers.referer || req.url === '/favicon.ico') return;
-  
   var params = {  // seems to be sensitive to the order they are listed
     utmcs:  'UTF-8',
     utmul:  'en-us',
